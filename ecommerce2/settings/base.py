@@ -63,7 +63,7 @@ INSTALLED_APPS = (
     'registration',
     #my apps
     'newsletter',
-)
+	)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
