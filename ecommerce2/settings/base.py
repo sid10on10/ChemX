@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'registration',
     #my apps
     'newsletter',
+	'pybb',
 	)
 
 MIDDLEWARE_CLASSES = (
@@ -74,6 +75,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+	'pybb.middleware.PybbMiddleware',
+
 )
 
 ROOT_URLCONF = 'ecommerce2.urls'
@@ -138,6 +141,35 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
 
+PYBB_AUTO_USER_PERMISSIONS = True
+PYBB_PERMISSION_HANDLER = 'pybb.permissions.DefaultPermissionHandler'
+PYBB_ANONYMOUS_VIEWS_CACHE_BUFFER = 1
+#PYBB_PREMODERATION =
+PYBB_NICE_URL = True
+PYBB_DEFAULT_TITLE = "Chem Portal"
+PYBB_TEMPLATE = 'base.html'
+PYBB_DEFAULT_TIME_ZONE = 5.5
+PYBB_ATTACHMENT_ENABLE = True
+PYBB_ATTACHMENT_SIZE_LIMIT = 20971520
+PYBB_ATTACHMENT_UPLOAD_TO = 'protected/forum/attachment'
+
+#PYBB_FREEZE_FIRST_POST = True
+PYBB_FORUM_PAGE_SIZE = 25
+PYBB_TOPIC_PAGE_SIZE = 15
+
+#PYBB_DEFAULT_AUTOSUBSCRIBE = False
+PYBB_DISABLE_SUBSCRIPTIONS = False
+PYBB_DISABLE_NOTIFICATIONS = True
+PYBB_USE_DJANGO_MAILER = True
+
+#PYBB_MARKUP = 'bbcode'
+#PYBB_MARKUP = 'markdown'
+#PYBB_SMILES_PREFIX = 'pybb/emoticons'
+#PYBB_SMILES = {'&gt;_&lt;': 'angry.png',':.(': 'cry.png','o_O': 'eyes.png','[]_[]': 'geek.png','8)': 'glasses.png',':D': 'lol.png',':(': 'sad.png',':O': 'shok.png','-_-': 'shy.png',':)': 'smile.png',':P': 'tongue.png',';)': 'wink.png'}
+
+PYBB_AVATAR_HEIGHT = 80
+PYBB_MAX_AVATAR_SIZE = 20000
+#PYBB_DEFAULT_AVATAR_URL = settings.STATIC_URL + 'pybb/img/default_avatar.jpg'
 
 
 #Crispy FORM TAGs SETTINGS
